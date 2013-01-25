@@ -20,7 +20,7 @@ lib64
 
 # Installer logs
 pip-log.txt
-
+*.txt~
 # Unit test / coverage reports
 .coverage
 .tox
@@ -33,3 +33,5 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+
