@@ -44,8 +44,11 @@ def Make_it_standerd_code(OUT,filetoimplement):
         needed_indent_line = linecache.getline(filetoimplement.name, 
                                                int(line_no))
         name_of_variable = invalid_variable_name[2]
-        get_name = raw_input("Present name in the code is %s it is not matching to pattern %s **be cautious while typing name**\n  :"%(name_of_variable, invalid_variable_name[3])) 
-        if wholetextoffile.find(needed_indent_line) != -1:
+        if invalid_variable_name[3].strip() == "[a-z_][a-z0-9_]{2,30}$":
+            get_name = name_of_variable.lower()
+        else:
+            get_name = name_of_variable#raw_input("Present name in the code is %s it is not matching to pattern %s **be cautious while typing name**\n  :"%(name_of_variable, invalid_variable_name[3])) 
+        if wholetextoffile.find(name_of_variable) != -1:
             #new_line_to_replace = needed_indent_line.replace(name_of_variable,
             #                                                 get_name)
             wholetextoffile = wholetextoffile.replace(name_of_variable, 
